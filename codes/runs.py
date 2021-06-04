@@ -276,7 +276,7 @@ def main(args):
         save_model(kge_model, optimizer, save_variable_list, args)
 
         df = pd.DataFrame(loss_file)
-        df.to_csv('loss.csv')
+        df.to_csv(os.path.join(args.save_path, 'loss.csv'))
 
     if args.do_valid:
         logging.info('Evaluating on Valid Dataset...')
