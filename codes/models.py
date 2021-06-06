@@ -426,7 +426,7 @@ class RotatE(KGEModel):
 
         return self.gamma.item() - score.sum(dim = 2)
     
-  class TransE(KGEModel):
+class TransE(KGEModel):
     def __init__(self, num_entity, num_relation, hidden_dim, gamma, modulus_weight=1.0, phase_weight=0.5):
         super(TransE, self).__init__()
         self.num_entity = num_entity
