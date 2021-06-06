@@ -161,6 +161,10 @@ def main(args):
 
     if args.model == 'ModE':
         kge_model = ModE(num_entity, num_relation, args.hidden_dim, args.gamma)
+    elif args.model == 'TransE':
+        kge_model = TransE(num_entity, num_relation, args.hidden_dim, args.gamma)
+    elif args.model == 'RotatE':
+        kge_model = RotatE(num_entity, num_relation, args.hidden_dim, args.gamma)
     elif args.model == 'HAKE':
         kge_model = HAKE(num_entity, num_relation, args.hidden_dim, args.gamma, args.modulus_weight, args.phase_weight)
 
