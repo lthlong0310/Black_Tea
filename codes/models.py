@@ -340,7 +340,7 @@ class HAKE(KGEModel):
 
     def func(self, head, rel, tail, batch_type):
         phase_head, mod_head = torch.chunk(head, 2, dim=2)
-        phase_relation, mod_relation, bias_relation = torch.chunk(rel, 2, dim=2)
+        phase_relation, mod_relation = torch.chunk(rel, 2, dim=2)
         phase_tail, mod_tail = torch.chunk(tail, 2, dim=2)
 
         phase_head = phase_head / (self.embedding_range.item() / self.pi)
