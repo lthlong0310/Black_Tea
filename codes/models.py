@@ -365,7 +365,7 @@ class HAKE(KGEModel):
         return self.gamma.item() - (phase_score + r_score)
     
 class RotatE(KGEModel):
-    def __init__(self, num_entity, num_relation, hidden_dim, gamma, modulus_weight=1.0, phase_weight=0.5):
+    def __init__(self, num_entity, num_relation, hidden_dim, gamma):
         super(RotatE, self).__init__()
         self.num_entity = num_entity
         self.num_relation = num_relation
@@ -427,7 +427,7 @@ class RotatE(KGEModel):
         return self.gamma.item() - score.sum(dim = 2)
     
 class TransE(KGEModel):
-    def __init__(self, num_entity, num_relation, hidden_dim, gamma, modulus_weight=1.0, phase_weight=0.5):
+    def __init__(self, num_entity, num_relation, hidden_dim, gamma):
         super(TransE, self).__init__()
         self.num_entity = num_entity
         self.num_relation = num_relation
